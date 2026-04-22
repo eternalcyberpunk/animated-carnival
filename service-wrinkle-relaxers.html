@@ -275,17 +275,6 @@
     margin-bottom: 12px;
   }
   .ba-item .img-half { aspect-ratio: 1; position: relative; }
-  .ba-item .img-half::after {
-    content: attr(data-label);
-    position: absolute;
-    bottom: 10px; left: 10px;
-    background: rgba(245,240,232,0.95);
-    padding: 4px 10px;
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    color: var(--ink);
-    text-transform: uppercase;
-  }
   .ba-item .cap {
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
@@ -501,40 +490,24 @@
   <p class="price-note">Cherry and Affirm accepted for treatments over $200. Ask at your consultation.</p>
 </section>
 
-<!-- BEFORE / AFTER -->
+<!-- RESULTS -->
 <section class="ba-block">
-  <div class="ba-head">
+  <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+    <div class="img-placeholder variant-6" style="aspect-ratio: 4/5; border-radius: 2px;"></div>
     <div>
       <div class="eyebrow">Results</div>
-      <h2>Before & <em>after.</em></h2>
+      <h2 style="margin-bottom: 24px;">Real wrinkle relaxer work, <em>privately</em> shared.</h2>
+      <p style="color: var(--muted); font-size: 17px; line-height: 1.75; margin-bottom: 20px;">
+        Our public before & after gallery is being built properly — with written consent from every client and consistent photography conditions. That takes time.
+      </p>
+      <p style="color: var(--muted); font-size: 17px; line-height: 1.75; margin-bottom: 28px;">
+        But Jessie has a decade of wrinkle relaxer cases in her private binder. At your consultation, ask to see examples specific to what you're considering — crow's feet, the 11s, forehead, masseter. She'll walk you through them.
+      </p>
+      <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+        <a href="#book" class="cta cta-primary">Book Consultation</a>
+        <a href="gallery.html" class="cta-ghost">Why we do it this way →</a>
+      </div>
     </div>
-    <a href="gallery.html" class="cta-ghost">View all wrinkle relaxer results →</a>
-  </div>
-  <div class="ba-grid">
-    <a href="gallery.html" class="ba-item">
-      <div class="img-wrap">
-        <div class="img-half img-placeholder variant-1" data-label="BEFORE"></div>
-        <div class="img-half img-placeholder variant-5" data-label="AFTER"></div>
-      </div>
-      <div class="cap">11s · 18 units</div>
-      <div class="cap-sub">2 weeks post-treatment</div>
-    </a>
-    <a href="gallery.html" class="ba-item">
-      <div class="img-wrap">
-        <div class="img-half img-placeholder variant-2" data-label="BEFORE"></div>
-        <div class="img-half img-placeholder variant-4" data-label="AFTER"></div>
-      </div>
-      <div class="cap">Forehead · 12 units</div>
-      <div class="cap-sub">2 weeks post-treatment</div>
-    </a>
-    <a href="gallery.html" class="ba-item">
-      <div class="img-wrap">
-        <div class="img-half img-placeholder variant-3" data-label="BEFORE"></div>
-        <div class="img-half img-placeholder variant-6" data-label="AFTER"></div>
-      </div>
-      <div class="cap">Crow's feet · 16 units</div>
-      <div class="cap-sub">2 weeks post-treatment</div>
-    </a>
   </div>
 </section>
 
