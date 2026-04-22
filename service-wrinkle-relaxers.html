@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrinkle Relaxers · Botox in Claremont · Boon Therapeutics</title>
+<meta name="description" content="Botox, Dysport, and Xeomin with Jessie Barron Skelly, RN. A decade of injection experience. Natural results, never frozen. Claremont, CA.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .svc-hero {
+    padding: 40px 40px 80px;
+    background: var(--cream);
+  }
+  .svc-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--camel-dark);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--camel-dark); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--terracotta); }
+  .svc-hero h1 {
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.95;
+    margin-bottom: 20px;
+  }
+  .svc-hero h1 em { font-style: italic; color: var(--camel-dark); }
+  .svc-hero .lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 24px;
+    max-width: 460px;
+  }
+  .svc-hero-meta {
+    display: flex;
+    gap: 40px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 30px 0;
+  }
+  .svc-hero-meta .item .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--camel-dark);
+    margin-bottom: 4px;
+  }
+  .svc-hero-meta .item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .svc-hero-img { aspect-ratio: 4/5; border-radius: 2px; }
+
+  /* Overview */
+  .overview { background: var(--bone); }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .overview h2 { margin-bottom: 20px; }
+  .overview h2 em { font-style: italic; color: var(--camel-dark); }
+  .overview-left .eyebrow { color: var(--camel-dark); }
+  .overview-right p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .overview-right p.muted { color: var(--muted); }
+
+  /* Who this is for */
+  .whofor { background: var(--ivory); }
+  .whofor-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+  .whofor-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .whofor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .whofor-col {
+    padding: 32px;
+    background: var(--bone);
+    border: 1px solid var(--border-light);
+  }
+  .whofor-col.yes { border-left: 3px solid var(--terracotta); }
+  .whofor-col.no { border-left: 3px solid var(--camel); }
+  .whofor-col h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+  .whofor-col ul { list-style: none; padding: 0; }
+  .whofor-col li {
+    font-size: 16px;
+    line-height: 1.8;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-light);
+    color: var(--ink);
+  }
+  .whofor-col li:last-child { border-bottom: none; }
+  .whofor-col li::before {
+    content: attr(data-prefix);
+    color: var(--camel-dark);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    margin-right: 10px;
+  }
+
+  /* Jessie's approach */
+  .approach { background: var(--bone); }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .approach-img { aspect-ratio: 4/5; border-radius: 2px; }
+  .approach-text .eyebrow { color: var(--camel-dark); }
+  .approach-text h2 { margin-bottom: 24px; }
+  .approach-text h2 em { font-style: italic; color: var(--camel-dark); }
+  .approach-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+    color: var(--muted);
+  }
+  .approach-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    line-height: 1.4;
+    color: var(--ink);
+    border-left: 2px solid var(--terracotta);
+    padding-left: 24px;
+    margin: 28px 0;
+  }
+
+  /* What to expect — timeline */
+  .timeline { background: var(--ivory); }
+  .timeline-head { text-align: center; max-width: 640px; margin: 0 auto 60px; }
+  .timeline-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .timeline-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .timeline-step {
+    position: relative;
+  }
+  .timeline-step .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .timeline-step h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .timeline-step .time {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--camel-dark);
+    margin-bottom: 12px;
+  }
+  .timeline-step p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* Pricing */
+  .pricing-block { background: var(--cream); }
+  .pricing-head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  .pricing-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .pricing-table {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bone);
+    border: 1px solid var(--border);
+  }
+  .price-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--border-light);
+    align-items: center;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .price-row p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .price-row .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--terracotta);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .price-note {
+    text-align: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 24px;
+    font-style: italic;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Before After */
+  .ba-block { background: var(--bone); }
+  .ba-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  .ba-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .ba-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .ba-item { text-decoration: none; color: inherit; }
+  .ba-item .img-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+  }
+  .ba-item .img-half { aspect-ratio: 1; position: relative; }
+  .ba-item .img-half::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 10px; left: 10px;
+    background: rgba(245,240,232,0.95);
+    padding: 4px 10px;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .ba-item .cap {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .ba-item .cap-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* FAQ */
+  .svc-faq { background: var(--ivory); }
+  .faq-head { text-align: center; margin-bottom: 50px; }
+  .faq-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+  .faq-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .faq-a {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* CTA */
+  .svc-cta-block { background: var(--ink); color: var(--bone); text-align: center; padding: 100px 40px; }
+  .svc-cta-block .eyebrow { color: var(--camel); }
+  .svc-cta-block h2 { color: var(--cream); margin-bottom: 24px; }
+  .svc-cta-block h2 em { color: var(--camel); font-style: italic; }
+  .svc-cta-block p { color: var(--border); max-width: 520px; margin: 0 auto 40px; font-size: 17px; line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .svc-hero-grid, .overview-grid, .approach-grid { grid-template-columns: 1fr; gap: 40px; }
+    .timeline-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .whofor-grid { grid-template-columns: 1fr; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .price-row { grid-template-columns: 1fr; }
+    .price-row .price { margin-top: 8px; }
+    .ba-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+</style>
+</head>
+<body data-page="service">
+
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-grid">
+    <div>
+      <div class="breadcrumb"><a href="services.html">Services</a> · <a href="services.html">Face</a> · Wrinkle Relaxers</div>
+      <h1>Wrinkle <em>Relaxers.</em></h1>
+      <p class="lead">Botox, Dysport, Xeomin. For forehead lines, frown lines, crow's feet, and the 11s between your brows. Not to erase them — to soften them.</p>
+      <div class="svc-hero-meta">
+        <div class="item">
+          <div class="label">Treatment time</div>
+          <div class="val">15–30 min</div>
+        </div>
+        <div class="item">
+          <div class="label">Results in</div>
+          <div class="val">2 weeks</div>
+        </div>
+        <div class="item">
+          <div class="label">Lasts</div>
+          <div class="val">3–4 months</div>
+        </div>
+      </div>
+      <a href="#book" class="cta cta-primary">Book Consultation</a>
+    </div>
+    <div class="svc-hero-img img-placeholder variant-5"></div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="overview">
+  <div class="overview-grid">
+    <div class="overview-left">
+      <div class="eyebrow">What it is</div>
+      <h2>Small protein. <em>Big</em> difference.</h2>
+    </div>
+    <div class="overview-right">
+      <p>Wrinkle relaxers — commonly known by brand names like Botox, Dysport, and Xeomin — are injectable neuromodulators that temporarily relax the muscles responsible for dynamic wrinkles. The ones that show up when you frown, laugh, or squint.</p>
+      <p class="muted">They don't change your face. They soften the expressions that, over years, etch themselves into your skin. Done well, nobody can tell you've had anything done. Done poorly, you know immediately. At Boon, we err on the side of "nobody can tell."</p>
+      <p class="muted">Jessie has administered over 50,000 units of neuromodulator across a decade of practice. She uses only FDA-approved products sourced directly from manufacturers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO FOR -->
+<section class="whofor">
+  <div class="whofor-head">
+    <div class="eyebrow">Is this for me?</div>
+    <h2>Who wrinkle relaxers are (and <em>aren't</em>) for.</h2>
+  </div>
+  <div class="whofor-grid">
+    <div class="whofor-col yes">
+      <h4>Great fit if you...</h4>
+      <ul>
+        <li data-prefix="—">Have dynamic wrinkles (lines that appear when you make expressions)</li>
+        <li data-prefix="—">Want to prevent lines from deepening over time</li>
+        <li data-prefix="—">Experience tension headaches or teeth grinding</li>
+        <li data-prefix="—">Are bothered by "11s," crow's feet, or forehead lines</li>
+        <li data-prefix="—">Are generally healthy and over 18</li>
+      </ul>
+    </div>
+    <div class="whofor-col no">
+      <h4>Probably not if you...</h4>
+      <ul>
+        <li data-prefix="—">Are pregnant or nursing (we'll wait)</li>
+        <li data-prefix="—">Have deep, static wrinkles at rest (filler may be a better fit)</li>
+        <li data-prefix="—">Have a neuromuscular condition</li>
+        <li data-prefix="—">Want permanent results (these wear off in 3–4 months)</li>
+        <li data-prefix="—">Want a completely frozen, expression-free look (we don't do that here)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- JESSIE'S APPROACH -->
+<section class="approach">
+  <div class="approach-grid">
+    <div class="approach-img img-placeholder variant-6"></div>
+    <div class="approach-text">
+      <div class="eyebrow">Jessie's approach</div>
+      <h2>Why my Botox doesn't look like <em>Botox.</em></h2>
+      <p>I use less than most injectors. That's the short version.</p>
+      <p>The industry standard is to dose aggressively — 20–25 units for the forehead, 20 for the 11s, 24 for crow's feet. That's how you get the frozen, shiny forehead look that makes Botox obvious.</p>
+      <p>I start with 60–70% of that for first-timers, sometimes less. You come back at two weeks and we assess. If we need more, we add. That's how you keep expression in your face while still softening the lines.</p>
+      <div class="approach-quote">I'd rather have you come back and add five more units than put in too much and have you wait four months to feel normal again.</div>
+      <p>Over a decade, I've learned where everyone's muscle patterns are different — and that the "standard map" most injectors are trained on doesn't fit most faces.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="timeline">
+  <div class="timeline-head">
+    <div class="eyebrow">What to expect</div>
+    <h2>From <em>consultation</em> to full result.</h2>
+  </div>
+  <div class="timeline-steps">
+    <div class="timeline-step">
+      <span class="num">01</span>
+      <div class="time">Day 0 · Consultation</div>
+      <h4>We talk.</h4>
+      <p>You come in, we sit down, we look at your face in natural light. I ask what's bothering you and what you want to feel different. We don't inject today.</p>
+    </div>
+    <div class="timeline-step">
+      <span class="num">02</span>
+      <div class="time">Day 7 · Treatment</div>
+      <h4>The injection.</h4>
+      <p>You come back to inject. Takes about 15 minutes. There's minor pinching but no real pain. You can drive home, go back to work, wear makeup after four hours.</p>
+    </div>
+    <div class="timeline-step">
+      <span class="num">03</span>
+      <div class="time">Days 3–14 · Kicks in</div>
+      <h4>Gradual settling.</h4>
+      <p>You start feeling it at day 3, see it by day 7, and have the full result at day 14. It settles gradually — no dramatic day you look in the mirror and gasp.</p>
+    </div>
+    <div class="timeline-step">
+      <span class="num">04</span>
+      <div class="time">Week 2 · Follow-up</div>
+      <h4>Top up if needed.</h4>
+      <p>Free two-week follow-up for all first-timers. We assess together and add units if anything needs a touch more. No pressure, no upsell.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-block">
+  <div class="pricing-head">
+    <div class="eyebrow">Pricing</div>
+    <h2>What it <em>costs.</em></h2>
+  </div>
+  <div class="pricing-table">
+    <div class="price-row">
+      <div>
+        <h4>Botox / Xeomin</h4>
+        <p>Per unit, no minimum. Most first-timers use 20–40 units.</p>
+      </div>
+      <div class="price">$13 / unit</div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h4>Dysport</h4>
+        <p>Per unit, no minimum. Note: Dysport units aren't 1:1 with Botox.</p>
+      </div>
+      <div class="price">$4.50 / unit</div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h4>Consultation (first visit)</h4>
+        <p>Included, no charge. Thirty minutes with Jessie, treatment plan written up.</p>
+      </div>
+      <div class="price">Free</div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h4>Two-week follow-up</h4>
+        <p>Included with first-time treatment. Top-up units billed at standard rate.</p>
+      </div>
+      <div class="price">Free</div>
+    </div>
+  </div>
+  <p class="price-note">Cherry and Affirm accepted for treatments over $200. Ask at your consultation.</p>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="ba-block">
+  <div class="ba-head">
+    <div>
+      <div class="eyebrow">Results</div>
+      <h2>Before & <em>after.</em></h2>
+    </div>
+    <a href="gallery.html" class="cta-ghost">View all wrinkle relaxer results →</a>
+  </div>
+  <div class="ba-grid">
+    <a href="gallery.html" class="ba-item">
+      <div class="img-wrap">
+        <div class="img-half img-placeholder variant-1" data-label="BEFORE"></div>
+        <div class="img-half img-placeholder variant-5" data-label="AFTER"></div>
+      </div>
+      <div class="cap">11s · 18 units</div>
+      <div class="cap-sub">2 weeks post-treatment</div>
+    </a>
+    <a href="gallery.html" class="ba-item">
+      <div class="img-wrap">
+        <div class="img-half img-placeholder variant-2" data-label="BEFORE"></div>
+        <div class="img-half img-placeholder variant-4" data-label="AFTER"></div>
+      </div>
+      <div class="cap">Forehead · 12 units</div>
+      <div class="cap-sub">2 weeks post-treatment</div>
+    </a>
+    <a href="gallery.html" class="ba-item">
+      <div class="img-wrap">
+        <div class="img-half img-placeholder variant-3" data-label="BEFORE"></div>
+        <div class="img-half img-placeholder variant-6" data-label="AFTER"></div>
+      </div>
+      <div class="cap">Crow's feet · 16 units</div>
+      <div class="cap-sub">2 weeks post-treatment</div>
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="svc-faq">
+  <div class="faq-head">
+    <div class="eyebrow">Questions</div>
+    <h2>Honest <em>answers.</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">Will I look frozen?</div>
+      <div class="faq-a">Not if Jessie's the one injecting. The frozen look happens when too much product is placed in the wrong muscles. We dose conservatively and preserve natural expression — you should still be able to raise your eyebrows and furrow your brow, just with less of a line.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Does it hurt?</div>
+      <div class="faq-a">Minor pinching, like a mosquito bite. Treatment takes 15 minutes. We use very small needles and ice if you're sensitive.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it last?</div>
+      <div class="faq-a">Typically 3–4 months for first-timers. Most clients settle into treatments every 4 months. It wears off gradually — you'll notice movement coming back before the lines return.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there downtime?</div>
+      <div class="faq-a">Essentially none. Small red marks at injection sites for an hour or two. You can work out, go back to work, and wear makeup after four hours. Avoid lying flat for four hours and avoid heavy exercise the same day.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How much will I need?</div>
+      <div class="faq-a">Impossible to say without seeing you. Most women need 20–40 units for their first visit. Men usually need more — they have stronger facial muscles. Jessie will estimate at your consultation and write it into your treatment plan.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I start young as "prevention"?</div>
+      <div class="faq-a">Sometimes yes, sometimes no. "Preventative Botox" is a real thing for people who already have prominent dynamic lines in their mid-twenties. For most people under 28 with no lines at rest, the answer is "not yet." Jessie will tell you honestly.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="svc-cta-block" id="book">
+  <div class="container-narrow">
+    <div class="eyebrow">Next step</div>
+    <h2>Let's <em>talk</em> about your face.</h2>
+    <p>Consultations are free, thirty minutes, and never pushy. If wrinkle relaxers aren't right for you, we'll tell you. If they are, we'll make a plan together.</p>
+    <a href="#" class="cta cta-primary">Book Consultation</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

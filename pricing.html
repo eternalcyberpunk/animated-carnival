@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing · Boon Therapeutics</title>
+<meta name="description" content="Transparent pricing for all services at Boon Therapeutics. Cherry and Affirm financing available.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .pricing-intro {
+    background: var(--cream);
+    padding: 80px 40px 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .pricing-intro h1 {
+    font-size: clamp(44px, 5vw, 72px);
+    margin-bottom: 20px;
+  }
+  .pricing-intro h1 em { font-style: italic; color: var(--camel-dark); }
+  .pricing-intro .lead {
+    font-size: 18px;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  .pricing-section {
+    background: var(--bone);
+    padding: 80px 40px;
+  }
+  .pricing-group {
+    max-width: 920px;
+    margin: 0 auto 80px;
+  }
+  .pricing-group:last-child { margin-bottom: 0; }
+  .pricing-group-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .pricing-group-head .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--camel-dark);
+  }
+  .pricing-group-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .pricing-group-head .desc {
+    margin-left: auto;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 320px;
+    line-height: 1.6;
+  }
+
+  .price-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 30px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .price-row p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 540px;
+  }
+  .price-row .amt {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--terracotta);
+    font-style: italic;
+    white-space: nowrap;
+  }
+  .price-row .amt-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-style: normal;
+    margin-top: 2px;
+    text-align: right;
+  }
+
+  /* Financing block */
+  .financing {
+    background: var(--ivory);
+    padding: 80px 40px;
+  }
+  .financing-head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+  .financing-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .financing-head p { color: var(--muted); margin-top: 16px; font-size: 17px; line-height: 1.75; }
+  .financing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .financing-card {
+    padding: 40px 32px;
+    background: var(--bone);
+    border: 1px solid var(--border-light);
+  }
+  .financing-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .financing-card .detail {
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    color: var(--camel-dark);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .financing-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  /* Policies */
+  .policies {
+    background: var(--bone);
+    padding: 80px 40px;
+    border-top: 1px solid var(--border-light);
+  }
+  .policies-head {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 50px;
+  }
+  .policies-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .policies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .policy {
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+  }
+  .policy h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .policy p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* CTA */
+  .pricing-cta {
+    background: var(--ink);
+    color: var(--bone);
+    text-align: center;
+    padding: 100px 40px;
+  }
+  .pricing-cta .eyebrow { color: var(--camel); }
+  .pricing-cta h2 { color: var(--cream); margin-bottom: 24px; }
+  .pricing-cta h2 em { color: var(--camel); font-style: italic; }
+  .pricing-cta p { color: var(--border); max-width: 520px; margin: 0 auto 40px; font-size: 17px; line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .pricing-group-head { flex-wrap: wrap; }
+    .pricing-group-head .desc { margin-left: 0; margin-top: 8px; }
+    .price-row { grid-template-columns: 1fr; }
+    .price-row .amt { margin-top: 8px; }
+    .price-row .amt-sub { text-align: left; }
+    .financing-grid { grid-template-columns: 1fr; }
+    .policies-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body data-page="pricing">
+
+<div id="site-header"></div>
+
+<div class="pricing-intro">
+  <div class="eyebrow">Pricing</div>
+  <h1>Transparent and <em>honest.</em></h1>
+  <p class="lead">Every price, in one place. No packages you don't need, no hidden consultation fees, no upsells at the register. If something's not listed, it's because we don't offer it.</p>
+</div>
+
+<section class="pricing-section">
+
+  <!-- FACE -->
+  <div class="pricing-group">
+    <div class="pricing-group-head">
+      <span class="num">01</span>
+      <h2>Face</h2>
+      <span class="desc">Wrinkle relaxers, fillers, and refined injectable treatments for the face.</span>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Botox / Xeomin</h3>
+        <p>Per unit, no minimum. Most first-timers use 20–40 units total.</p>
+      </div>
+      <div class="amt">$13<span class="amt-sub">Per unit</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Dysport</h3>
+        <p>Per unit, no minimum. Dysport units don't convert 1:1 with Botox.</p>
+      </div>
+      <div class="amt">$4.50<span class="amt-sub">Per unit</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Hyaluronic Acid Filler (Juvederm, Restylane)</h3>
+        <p>Per syringe. Lips usually one syringe, cheeks usually two, jawline two to three.</p>
+      </div>
+      <div class="amt">$650<span class="amt-sub">Per syringe</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Undereye Rejuvenation</h3>
+        <p>Specialized filler for tear trough hollowness. Pricing includes one syringe.</p>
+      </div>
+      <div class="amt">$750<span class="amt-sub">Starting</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Nose Slimming with Botox</h3>
+        <p>Non-surgical tip lift and bridge refinement. Usually 6–8 units total.</p>
+      </div>
+      <div class="amt">$400<span class="amt-sub">Starting</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Masseter (jaw slimming / TMJ)</h3>
+        <p>For grinding, TMJ, and facial slimming. Usually 40–50 units total.</p>
+      </div>
+      <div class="amt">$13<span class="amt-sub">Per unit</span></div>
+    </div>
+  </div>
+
+  <!-- SKIN -->
+  <div class="pricing-group">
+    <div class="pricing-group-head">
+      <span class="num">02</span>
+      <h2>Skin</h2>
+      <span class="desc">Treatments for texture, tone, and glow. Usually a series for best results.</span>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Microneedling (single session)</h3>
+        <p>Collagen induction therapy. Best in a series of 3–4, spaced 4 weeks apart.</p>
+      </div>
+      <div class="amt">$350<span class="amt-sub">Per session</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Microneedling with PRP</h3>
+        <p>Your own platelet-rich plasma added for accelerated healing and results.</p>
+      </div>
+      <div class="amt">$550<span class="amt-sub">Per session</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Collagen Restoration (Sculptra)</h3>
+        <p>Gradual, long-lasting volume. Usually requires 2–3 sessions, spaced 6 weeks apart.</p>
+      </div>
+      <div class="amt">$800<span class="amt-sub">Per vial</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Chemical Peel (light)</h3>
+        <p>Lunchtime peel with minimal downtime. Great for tone, mild texture.</p>
+      </div>
+      <div class="amt">$175<span class="amt-sub">Per session</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Chemical Peel (medium)</h3>
+        <p>Deeper resurfacing for sun damage and acne scars. 3–5 days of peeling.</p>
+      </div>
+      <div class="amt">$350<span class="amt-sub">Per session</span></div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="pricing-group">
+    <div class="pricing-group-head">
+      <span class="num">03</span>
+      <h2>Body</h2>
+      <span class="desc">Neck, hair, and treatments often overlooked by other medspas.</span>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Neck Rejuvenation (single session)</h3>
+        <p>Combination approach: Botox for banding plus microneedling for texture.</p>
+      </div>
+      <div class="amt">$550<span class="amt-sub">Starting</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Hair Restoration (PRP)</h3>
+        <p>Platelet-rich plasma injections for thinning hair. Series of 3 recommended.</p>
+      </div>
+      <div class="amt">$900<span class="amt-sub">Per session</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Hair Restoration (exosomes)</h3>
+        <p>Advanced treatment for more significant hair loss. Series of 3 recommended.</p>
+      </div>
+      <div class="amt">$1,400<span class="amt-sub">Per session</span></div>
+    </div>
+  </div>
+
+  <!-- CONSULTS -->
+  <div class="pricing-group">
+    <div class="pricing-group-head">
+      <span class="num">04</span>
+      <h2>Consultations</h2>
+      <span class="desc">Always free, never rushed, never a sales pitch.</span>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Initial consultation</h3>
+        <p>Thirty minutes with Jessie. We talk through what you want, look at your face, make a written plan. You leave with no pressure to book.</p>
+      </div>
+      <div class="amt">Free<span class="amt-sub">No charge</span></div>
+    </div>
+    <div class="price-row">
+      <div>
+        <h3>Two-week follow-up</h3>
+        <p>Included with all first-time neuromodulator treatments. Top-up units billed at standard rate if needed.</p>
+      </div>
+      <div class="amt">Free<span class="amt-sub">No charge</span></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FINANCING -->
+<section class="financing">
+  <div class="financing-head">
+    <div class="eyebrow">Payment plans</div>
+    <h2>Financing <em>available.</em></h2>
+    <p>For treatments over $200, we offer two financing options. Both are soft credit checks — they won't affect your score to apply.</p>
+  </div>
+  <div class="financing-grid">
+    <div class="financing-card">
+      <h3>Cherry</h3>
+      <div class="detail">0% APR if paid within 3 months</div>
+      <p>Split your treatment into four or more equal payments. No interest if paid within 3 months, low interest rates after that.</p>
+      <a href="#" class="cta cta-outline">Apply with Cherry</a>
+    </div>
+    <div class="financing-card">
+      <h3>Affirm</h3>
+      <div class="detail">3, 6, or 12 month plans</div>
+      <p>Pay monthly for larger treatments. Rates from 0% to 30% APR based on credit. Decision in seconds.</p>
+      <a href="#" class="cta cta-outline">Apply with Affirm</a>
+    </div>
+  </div>
+</section>
+
+<!-- POLICIES -->
+<section class="policies">
+  <div class="policies-head">
+    <div class="eyebrow">Fine print</div>
+    <h2>Our <em>policies.</em></h2>
+  </div>
+  <div class="policies-grid">
+    <div class="policy">
+      <h4>Cancellations</h4>
+      <p>Please give us 24 hours notice. Same-day cancellations incur a $50 fee that goes toward your next visit. No-shows are billed the full consultation value.</p>
+    </div>
+    <div class="policy">
+      <h4>Price changes</h4>
+      <p>Prices listed are current as of 2026 and may change. Any active treatment plan will honor the price quoted at your consultation for 60 days.</p>
+    </div>
+    <div class="policy">
+      <h4>Touch-ups</h4>
+      <p>First-time neuromodulator touch-ups within 2 weeks are free. Filler touch-ups at the 4-week mark are billed at $150, not a full syringe price.</p>
+    </div>
+    <div class="policy">
+      <h4>Refunds</h4>
+      <p>Neuromodulator and filler treatments are not refundable, but we stand behind our work. If you're not happy at your follow-up, we'll make it right.</p>
+    </div>
+    <div class="policy">
+      <h4>Gift cards</h4>
+      <p>Available in any amount, never expire, can be applied toward any service. Contact the studio to purchase.</p>
+    </div>
+    <div class="policy">
+      <h4>Loyalty</h4>
+      <p>We don't do formal loyalty programs. What we do: return clients often get the most favorable pricing, and we remember you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="pricing-cta">
+  <div class="container-narrow">
+    <div class="eyebrow">Next step</div>
+    <h2>Prices shouldn't be a <em>mystery.</em></h2>
+    <p>If any of this isn't clear, just ask. Text us, call us, or book a consultation — no question is stupid, and nobody gets a surprise at checkout.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="cta cta-primary">Book Consultation</a>
+      <a href="contact.html" class="cta cta-outline" style="color: var(--bone); border-color: var(--bone);">Ask a question</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

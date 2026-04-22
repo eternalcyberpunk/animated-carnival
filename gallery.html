@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before & After · Boon Therapeutics</title>
+<meta name="description" content="Real results from real clients at Boon Therapeutics. Filter by service.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .gallery-hero {
+    background: var(--cream);
+    padding: 80px 40px 60px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .gallery-hero h1 {
+    font-size: clamp(44px, 5vw, 72px);
+    margin-bottom: 20px;
+  }
+  .gallery-hero h1 em { font-style: italic; color: var(--camel-dark); }
+  .gallery-hero p {
+    font-size: 17px;
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.75;
+  }
+
+  /* Filters */
+  .filters-bar {
+    background: var(--ivory);
+    padding: 30px 40px;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 65px;
+    z-index: 50;
+  }
+  .filters-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .filter {
+    padding: 10px 20px;
+    background: var(--bone);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .filter:hover { border-color: var(--camel-dark); }
+  .filter.active {
+    background: var(--ink);
+    color: var(--bone);
+    border-color: var(--ink);
+  }
+
+  /* Gallery grid */
+  .gallery-main {
+    background: var(--bone);
+    padding: 60px 40px 100px;
+  }
+  .gal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .gal-card {
+    background: var(--cream);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+  }
+  .gal-ba {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .gal-half {
+    aspect-ratio: 1;
+    position: relative;
+  }
+  .gal-half::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(42, 36, 32, 0.85);
+    color: var(--bone);
+    padding: 5px 10px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .gal-info {
+    padding: 20px 24px;
+  }
+  .gal-info .svc {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--camel-dark);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .gal-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 6px;
+    font-style: italic;
+  }
+  .gal-info .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--border-light);
+    margin-top: 10px;
+  }
+  .gal-info .meta span { display: flex; gap: 4px; }
+  .gal-info .meta span strong { color: var(--ink); font-weight: 500; }
+
+  /* Note */
+  .gal-note {
+    background: var(--ivory);
+    padding: 50px 40px;
+    text-align: center;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .gal-note p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--muted);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .gal-cta {
+    background: var(--ink);
+    color: var(--bone);
+    text-align: center;
+    padding: 100px 40px;
+  }
+  .gal-cta .eyebrow { color: var(--camel); }
+  .gal-cta h2 { color: var(--cream); margin-bottom: 24px; }
+  .gal-cta h2 em { color: var(--camel); font-style: italic; }
+  .gal-cta p { color: var(--border); max-width: 520px; margin: 0 auto 40px; font-size: 17px; line-height: 1.75; }
+
+  @media (max-width: 900px) {
+    .gal-grid { grid-template-columns: 1fr; }
+    .filters-bar { position: static; padding: 20px; }
+    .filters-inner { overflow-x: auto; justify-content: flex-start; flex-wrap: nowrap; }
+    .filter { white-space: nowrap; }
+  }
+</style>
+</head>
+<body data-page="gallery">
+
+<div id="site-header"></div>
+
+<section class="gallery-hero">
+  <div class="eyebrow">Before & After</div>
+  <h1>Real results. <em>Real</em> faces.</h1>
+  <p>Every photo below is a Boon client, shared with their permission. No filters, same lighting, same angle. Results vary by person, treatment, and timeline — these are honest examples of what Jessie's work looks like.</p>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <button class="filter active" data-filter="all">All results</button>
+    <button class="filter" data-filter="wrinkle">Wrinkle relaxers</button>
+    <button class="filter" data-filter="filler">Fillers</button>
+    <button class="filter" data-filter="undereye">Undereye</button>
+    <button class="filter" data-filter="lips">Lips</button>
+    <button class="filter" data-filter="skin">Skin treatments</button>
+    <button class="filter" data-filter="hair">Hair restoration</button>
+  </div>
+</div>
+
+<!-- GALLERY GRID -->
+<section class="gallery-main">
+  <div class="gal-grid">
+    <div class="gal-card" data-cat="wrinkle">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-1" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-5" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Wrinkle Relaxers</div>
+        <h3>Softened 11s</h3>
+        <div class="meta">
+          <span>Client age: <strong>34</strong></span>
+          <span><strong>18 units</strong></span>
+          <span><strong>2 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="undereye">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-2" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-4" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Undereye Rejuvenation</div>
+        <h3>Tear trough filler</h3>
+        <div class="meta">
+          <span>Client age: <strong>41</strong></span>
+          <span><strong>1 syringe</strong></span>
+          <span><strong>4 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="filler">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-3" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-6" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Cheek restoration</div>
+        <h3>Mid-face volume</h3>
+        <div class="meta">
+          <span>Client age: <strong>48</strong></span>
+          <span><strong>2 syringes</strong></span>
+          <span><strong>6 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="lips">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-1" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-2" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Lip Enhancement</div>
+        <h3>Subtle lip refinement</h3>
+        <div class="meta">
+          <span>Client age: <strong>29</strong></span>
+          <span><strong>0.5 syringe</strong></span>
+          <span><strong>3 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="wrinkle">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-4" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-3" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Wrinkle Relaxers</div>
+        <h3>Forehead relaxation</h3>
+        <div class="meta">
+          <span>Client age: <strong>38</strong></span>
+          <span><strong>12 units</strong></span>
+          <span><strong>2 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="skin">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-5" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-1" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Microneedling</div>
+        <h3>Texture & tone, 4 sessions</h3>
+        <div class="meta">
+          <span>Client age: <strong>43</strong></span>
+          <span><strong>Series of 4</strong></span>
+          <span><strong>16 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="filler">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-6" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-4" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Hyaluronic Acid Filler</div>
+        <h3>Chin & jawline definition</h3>
+        <div class="meta">
+          <span>Client age: <strong>35</strong></span>
+          <span><strong>3 syringes</strong></span>
+          <span><strong>8 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="hair">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-2" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-5" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Hair Restoration (PRP)</div>
+        <h3>Crown regrowth</h3>
+        <div class="meta">
+          <span>Client age: <strong>47</strong></span>
+          <span><strong>3 sessions</strong></span>
+          <span><strong>12 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-card" data-cat="wrinkle">
+      <div class="gal-ba">
+        <div class="gal-half img-placeholder variant-3" data-label="BEFORE"></div>
+        <div class="gal-half img-placeholder variant-6" data-label="AFTER"></div>
+      </div>
+      <div class="gal-info">
+        <div class="svc">Wrinkle Relaxers</div>
+        <h3>Crow's feet softened</h3>
+        <div class="meta">
+          <span>Client age: <strong>52</strong></span>
+          <span><strong>16 units</strong></span>
+          <span><strong>2 weeks</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTE -->
+<div class="gal-note">
+  <p>"Every face is different. What works for one client may not work for you — that's exactly why we do consultations. The photos above are examples, not promises."</p>
+</div>
+
+<!-- CTA -->
+<section class="gal-cta">
+  <div class="container-narrow">
+    <div class="eyebrow">Imagine your results</div>
+    <h2>Ready to see what's <em>possible?</em></h2>
+    <p>Book a free consultation with Jessie. We'll look at your face, understand what you want, and give you a realistic picture of what a treatment plan would look like.</p>
+    <a href="#" class="cta cta-primary">Book Consultation</a>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+<script>
+  // Filter functionality
+  document.querySelectorAll('.filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.gal-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.cat === filter) ? 'block' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

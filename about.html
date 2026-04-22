@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Jessie · Boon Therapeutics</title>
+<meta name="description" content="Ten years of aesthetic injection experience. A decade in Portland. Home in Claremont. Meet Jessie Barron Skelly, RN.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ===== ABOUT PAGE ===== */
+  .about-hero {
+    padding: 40px 40px 80px;
+    background: var(--cream);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .about-hero h1 {
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 0.98;
+    margin-bottom: 28px;
+  }
+  .about-hero h1 em { font-style: italic; color: var(--camel-dark); }
+  .about-hero .lead {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink);
+    max-width: 460px;
+    margin-bottom: 30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+  }
+  .about-hero p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 460px;
+    margin-bottom: 24px;
+  }
+  .about-hero-img {
+    aspect-ratio: 3/4;
+    border-radius: 2px;
+  }
+
+  /* Story section — editorial */
+  .story {
+    background: var(--bone);
+  }
+  .story-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .story-chapter {
+    margin-bottom: 60px;
+  }
+  .chapter-label {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .chapter-label .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--camel-dark);
+  }
+  .chapter-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .story-chapter p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    color: var(--ink);
+  }
+  .story-chapter p.muted { color: var(--muted); }
+  .pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1.3;
+    color: var(--camel-dark);
+    border-left: 2px solid var(--terracotta);
+    padding: 12px 0 12px 30px;
+    margin: 40px 0;
+  }
+
+  /* Image break */
+  .image-break {
+    padding: 0 40px 100px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .image-break .img {
+    aspect-ratio: 16/9;
+    border-radius: 2px;
+  }
+  .image-break .caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  /* Philosophy principles */
+  .principles {
+    background: var(--ivory);
+  }
+  .principles-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 70px;
+  }
+  .principles-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .principles-head p {
+    font-size: 17px;
+    margin-top: 20px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .principle {
+    padding: 30px 24px;
+    background: var(--bone);
+    border: 1px solid var(--border-light);
+  }
+  .principle .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--terracotta);
+    margin-bottom: 14px;
+  }
+  .principle h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  .principle p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+  /* Personal life */
+  .personal {
+    background: var(--cream);
+  }
+  .personal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .personal-img { aspect-ratio: 1; border-radius: 2px; }
+  .personal-text .eyebrow { color: var(--camel-dark); }
+  .personal-text h2 { margin-bottom: 24px; }
+  .personal-text h2 em { font-style: italic; color: var(--camel-dark); }
+  .personal-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+
+  /* CTA at bottom */
+  .about-cta {
+    background: var(--ink);
+    color: var(--bone);
+    text-align: center;
+  }
+  .about-cta .eyebrow { color: var(--camel); }
+  .about-cta h2 {
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .about-cta h2 em { color: var(--camel); font-style: italic; }
+  .about-cta p {
+    color: var(--border);
+    max-width: 520px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  @media (max-width: 900px) {
+    .about-hero-grid, .personal-grid { grid-template-columns: 1fr; gap: 40px; }
+    .principles-grid { grid-template-columns: 1fr; }
+    .chapter-label { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body data-page="about">
+
+<div id="site-header"></div>
+
+<!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="about-hero-grid">
+    <div>
+      <div class="eyebrow">About</div>
+      <h1>Hi — I'm <em>Jessie</em>.</h1>
+      <p class="lead">I spent a decade in Portland learning how to do this work well. Now I'm home in Claremont, doing it on my own terms.</p>
+      <p>Good aesthetic medicine is about judgment more than technique. I'd rather tell you to wait six months or try something smaller first than talk you into a procedure you don't need. That's how I'd want to be treated — and it's how I treat the people who sit in my chair.</p>
+      <a href="#book" class="cta cta-primary" style="margin-top: 16px;">Book a consultation with me</a>
+    </div>
+    <div class="about-hero-img img-placeholder variant-6"></div>
+  </div>
+</section>
+
+<!-- MY STORY -->
+<section class="story">
+  <div class="story-container">
+    <div style="text-align: center; margin-bottom: 80px;">
+      <div class="eyebrow">The long version</div>
+      <h2>How I <em>got</em> here.</h2>
+    </div>
+
+    <div class="story-chapter">
+      <div class="chapter-label">
+        <span class="num">01 —</span>
+        <h3>Claremont, originally</h3>
+      </div>
+      <p>I grew up in Claremont. Went to school here, worked a few high school jobs here, left for college, came back for holidays. The kind of hometown that you don't appreciate until you've spent a few years somewhere else.</p>
+      <p>I got my nursing degree and, like a lot of people in my twenties, needed to go somewhere new. Portland made sense — beautiful, weird, had a real aesthetic medicine scene. I ended up staying ten years.</p>
+    </div>
+
+    <div class="story-chapter">
+      <div class="chapter-label">
+        <span class="num">02 —</span>
+        <h3>Ten years in Portland</h3>
+      </div>
+      <p>I started out doing traditional nursing, then moved into aesthetics in my second year. It clicked immediately. I loved the precision, the artistry, the way a few small changes could help someone feel more like themselves.</p>
+      <p>I apprenticed under injectors I still look up to. Worked in practices where I saw every kind of patient — from first-timers who were terrified of needles to clients who'd been getting work done for thirty years. Learned what good aesthetic work looks like, and — more importantly — learned what overdone looks like.</p>
+      <div class="pull-quote">I'd rather under-treat and have you come back, than chase a trend and have you regret it.</div>
+      <p>Somewhere around year six, I started teaching. Other injectors would come to watch me work, and it turned into something I did regularly — small group trainings, one-on-one mentorships. To date, I've trained over 500 aesthetic professionals. It sharpened me more than anything else I've done.</p>
+    </div>
+
+    <div class="story-chapter">
+      <div class="chapter-label">
+        <span class="num">03 —</span>
+        <h3>Coming home</h3>
+      </div>
+      <p>I met my husband Vince in Portland. We had our son James. And somewhere in the middle of all of that, I started thinking about home.</p>
+      <p>Claremont has this really lovely thing where almost nothing has changed since I grew up. The same trees. The same streets. But also — it doesn't really have what I wanted to build. A medspa run by a nurse, not an algorithm. Small, considered, personal.</p>
+      <p>So I opened Boon. Named after something simple — a <em>boon</em>, meaning a gift or a favor — because that's what I want your time in my chair to feel like.</p>
+    </div>
+
+    <div class="story-chapter">
+      <div class="chapter-label">
+        <span class="num">04 —</span>
+        <h3>Now</h3>
+      </div>
+      <p>Boon is small, on purpose. I do every consultation, every treatment. I want to know your face, your life, what you're going through. I want to tell you no sometimes. And I want you to leave looking like yourself — just better-rested, a little more at ease in the mirror.</p>
+      <p>That's it. That's the whole thing.</p>
+      <div class="jessie-sig" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 34px; color: var(--ink); margin-top: 40px;">— Jessie</div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="image-break">
+  <div class="img img-placeholder variant-5"></div>
+  <div class="caption">The Boon studio · Claremont Village, 2024</div>
+</div>
+
+<!-- PRINCIPLES -->
+<section class="principles">
+  <div class="container">
+    <div class="principles-head">
+      <div class="eyebrow">How I practice</div>
+      <h2>Three <em>rules</em> I won't break.</h2>
+      <p>These aren't marketing principles. They're the ones I learned the hard way over ten years, and the ones I teach other injectors.</p>
+    </div>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="num">01</div>
+        <h4>Consult first, always</h4>
+        <p>No injection on the first visit — not ever. We talk, I look at your face in natural light, we make a plan. You go home, think about it, decide if you want to come back.</p>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <h4>Start small</h4>
+        <p>You can always add more. You can't take it out. I'd rather see you three times over a year than try to do everything in one session and push too far.</p>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <h4>Honest answers</h4>
+        <p>If what you want isn't realistic, or if I think you'd regret it, I'll say so. Sometimes the answer is "not right now." Sometimes it's "that's a surgeon, not me."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL LIFE -->
+<section class="personal">
+  <div class="personal-grid">
+    <div class="personal-img img-placeholder variant-4"></div>
+    <div class="personal-text">
+      <div class="eyebrow">Off the clock</div>
+      <h2>A life outside <em>the chair.</em></h2>
+      <p>I live in Claremont with my husband Vince and our son James. Outside of work, I'm usually hiking around the Wilderness Park, at one of the coffee shops in the Village, or pretending I'm going to take up pottery again.</p>
+      <p>I mention this because I think it matters who's holding the needle. You're not going to love your injector if they treat this as a production line. I treat ten to twelve people a day, max. Usually fewer. Always on purpose.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta" id="book">
+  <div class="container-narrow">
+    <div class="eyebrow">Come sit in my chair</div>
+    <h2>Let's <em>talk.</em></h2>
+    <p>Consultations are free, thirty minutes, and zero pressure. We'll talk about what you want, what's realistic, and what (if anything) makes sense to try.</p>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="cta cta-primary">Book Consultation</a>
+      <a href="contact.html" class="cta cta-outline" style="color: var(--bone); border-color: var(--bone);">Contact me →</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>

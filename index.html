@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boon Therapeutics · A nurse-owned medspa in Claremont Village</title>
+<meta name="description" content="Aesthetic medicine, built around you — not trends. A decade of injection experience from nurse practitioner Jessie Barron Skelly, RN. Natural results in Claremont, CA.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  /* ===== HOMEPAGE SPECIFIC ===== */
+
+  /* Hero */
+  .hero {
+    padding: 40px 40px 80px;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    background: var(--bone);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .hero-left h1 {
+    font-size: clamp(48px, 6.5vw, 92px);
+    line-height: 0.95;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero-left h1 em {
+    font-style: italic;
+    color: var(--camel-dark);
+  }
+  .hero-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 36px;
+    color: var(--muted);
+  }
+  .hero-ctas { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+  .hero-right { position: relative; }
+  .hero-img {
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+  }
+  .hero-caption {
+    position: absolute;
+    bottom: -24px;
+    left: -24px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 20px 28px;
+    max-width: 280px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .hero-caption::before {
+    content: '"';
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-size: 48px;
+    color: var(--terracotta);
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1;
+  }
+  .hero-caption .attr {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--camel-dark);
+    margin-top: 10px;
+  }
+
+  /* Credentials strip */
+  .credentials {
+    background: var(--ivory);
+    padding: 30px 40px;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+  }
+  .credentials-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .cred-item .sep {
+    width: 4px;
+    height: 4px;
+    background: var(--camel);
+    border-radius: 50%;
+  }
+
+  /* Services section */
+  .services-section {
+    background: var(--bone);
+  }
+  .services-head {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 70px;
+  }
+  .services-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .services-head p { font-size: 17px; margin-top: 20px; color: var(--muted); line-height: 1.75; }
+
+  .concern-group {
+    margin-bottom: 60px;
+  }
+  .concern-label {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .concern-label .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--camel-dark);
+  }
+  .concern-label h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .concern-label .desc {
+    margin-left: auto;
+    font-size: 14px;
+    color: var(--muted);
+    max-width: 360px;
+    line-height: 1.6;
+  }
+  .concern-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .concern-grid.three { grid-template-columns: repeat(3, 1fr); }
+  .concern-grid.two { grid-template-columns: repeat(2, 1fr); max-width: 720px; }
+  .svc-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s;
+  }
+  .svc-card:hover { transform: translateY(-4px); }
+  .svc-card .img {
+    aspect-ratio: 4/5;
+    margin-bottom: 14px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .svc-card .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .svc-card .meta {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--camel-dark);
+    text-transform: uppercase;
+  }
+
+  /* About Jessie teaser */
+  .jessie-section {
+    background: var(--cream);
+  }
+  .jessie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .jessie-img {
+    aspect-ratio: 4/5;
+    border-radius: 2px;
+  }
+  .jessie-text h2 {
+    margin-bottom: 24px;
+  }
+  .jessie-text h2 em { font-style: italic; color: var(--camel-dark); }
+  .jessie-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+  .jessie-text p strong { color: var(--ink); font-weight: 500; }
+  .jessie-sig {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--ink);
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+  .jessie-credentials {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+  }
+  .jessie-cred .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .jessie-cred .label {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* Philosophy section */
+  .philosophy {
+    background: var(--ink);
+    color: var(--bone);
+    text-align: center;
+  }
+  .philosophy .eyebrow { color: var(--camel); }
+  .philosophy blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 56px);
+    line-height: 1.2;
+    max-width: 920px;
+    margin: 0 auto 40px;
+    color: var(--cream);
+    letter-spacing: -0.01em;
+  }
+  .philosophy blockquote em { color: var(--camel); }
+  .philosophy .attribution {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--camel);
+  }
+
+  /* Gallery preview */
+  .gallery-preview { background: var(--bone); }
+  .gallery-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+  }
+  .gallery-head h2 em { font-style: italic; color: var(--camel-dark); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .gal-item { text-decoration: none; color: inherit; }
+  .gal-item .img {
+    aspect-ratio: 1;
+    margin-bottom: 12px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .gal-item .img::after {
+    content: 'BEFORE  /  AFTER';
+    position: absolute;
+    bottom: 12px; left: 12px;
+    background: rgba(245,240,232,0.95);
+    padding: 6px 12px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .gal-item .label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+  }
+
+  /* Trainings block */
+  .trainings-block {
+    background: var(--ivory);
+  }
+  .trainings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .trainings-text .eyebrow { color: var(--terracotta); }
+  .trainings-text h2 { margin-bottom: 24px; }
+  .trainings-text h2 em { font-style: italic; color: var(--camel-dark); }
+  .trainings-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--muted);
+  }
+  .trainings-stats {
+    display: flex;
+    gap: 50px;
+    margin: 30px 0;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .trainings-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    color: var(--terracotta);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .trainings-stat .label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .trainings-img { aspect-ratio: 4/5; border-radius: 2px; }
+
+  /* Visit block */
+  .visit-block {
+    background: var(--cream);
+    text-align: center;
+  }
+  .visit-block h2 { margin-bottom: 24px; }
+  .visit-block h2 em { font-style: italic; color: var(--camel-dark); }
+  .visit-block p {
+    font-size: 17px;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .visit-card {
+    display: inline-flex;
+    gap: 0;
+    background: var(--bone);
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .visit-item {
+    padding: 24px 32px;
+    border-right: 1px solid var(--border);
+    text-align: left;
+    min-width: 180px;
+  }
+  .visit-item:last-child { border-right: none; }
+  .visit-item .label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--camel-dark);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .visit-item .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid, .jessie-grid, .trainings-grid { grid-template-columns: 1fr; gap: 40px; }
+    .concern-grid, .concern-grid.three, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .concern-label { flex-wrap: wrap; }
+    .concern-label .desc { margin-left: 0; margin-top: 8px; }
+    .gallery-head { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .visit-card { flex-direction: column; }
+    .visit-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .jessie-credentials, .trainings-stats { gap: 30px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body data-page="home">
+
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="eyebrow">Est. 2024 · Claremont Village</div>
+      <h1>Aesthetic medicine, built around <em>you</em> — not trends.</h1>
+      <p class="hero-lead">A nurse-owned practice focused on natural, considered results. Led by <strong>Jessie Barron Skelly, RN</strong> — a decade of injection experience, brought home to Claremont.</p>
+      <div class="hero-ctas">
+        <a href="#book" class="cta cta-primary">Schedule Consultation</a>
+        <a href="services.html" class="cta-ghost">Explore services →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img img-placeholder variant-5"></div>
+      <div class="hero-caption">
+        Good aesthetic work should look like nothing happened — just a better version of you.
+        <span class="attr">— Jessie, RN</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS STRIP -->
+<div class="credentials">
+  <div class="credentials-inner">
+    <div class="cred-item">Registered nurse-owned<span class="sep"></span></div>
+    <div class="cred-item">10+ years of injection experience<span class="sep"></span></div>
+    <div class="cred-item">Natural results, every time<span class="sep"></span></div>
+    <div class="cred-item">Cherry & Affirm accepted</div>
+  </div>
+</div>
+
+<!-- SERVICES BY CONCERN -->
+<section class="services-section">
+  <div class="container">
+    <div class="services-head">
+      <div class="eyebrow">Services</div>
+      <h2>Grouped by what you <em>actually</em> want to change.</h2>
+      <p>Not by molecule. Tell us what you'd like to feel different about, and Jessie will recommend the treatment — or combination — that gets there most naturally.</p>
+    </div>
+
+    <!-- FACE -->
+    <div class="concern-group">
+      <div class="concern-label">
+        <span class="num">01 —</span>
+        <h3>Face</h3>
+        <span class="desc">For softening lines, restoring volume, or refining features you've always been self-conscious about.</span>
+      </div>
+      <div class="concern-grid">
+        <a href="service-wrinkle-relaxers.html" class="svc-card">
+          <div class="img img-placeholder variant-1"></div>
+          <div class="name">Wrinkle Relaxers</div>
+          <div class="meta">From $13/unit</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-2"></div>
+          <div class="name">Hyaluronic Acid Fillers</div>
+          <div class="meta">From $650/syringe</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-3"></div>
+          <div class="name">Undereye Rejuvenation</div>
+          <div class="meta">From $750</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-4"></div>
+          <div class="name">Nose Slimming</div>
+          <div class="meta">From $400</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- SKIN -->
+    <div class="concern-group">
+      <div class="concern-label">
+        <span class="num">02 —</span>
+        <h3>Skin</h3>
+        <span class="desc">For texture, tone, and that natural glow that's harder to fake than everyone thinks.</span>
+      </div>
+      <div class="concern-grid three">
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-5"></div>
+          <div class="name">Microneedling</div>
+          <div class="meta">From $350</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-1"></div>
+          <div class="name">Collagen Restoration</div>
+          <div class="meta">From $800</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-6"></div>
+          <div class="name">Chemical Peels</div>
+          <div class="meta">From $175</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- BODY -->
+    <div class="concern-group">
+      <div class="concern-label">
+        <span class="num">03 —</span>
+        <h3>Body</h3>
+        <span class="desc">For the things we don't always talk about — necks and hair, which age louder than faces.</span>
+      </div>
+      <div class="concern-grid two">
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-2"></div>
+          <div class="name">Neck Rejuvenation</div>
+          <div class="meta">From $550</div>
+        </a>
+        <a href="#" class="svc-card">
+          <div class="img img-placeholder variant-3"></div>
+          <div class="name">Hair Restoration</div>
+          <div class="meta">From $900/session</div>
+        </a>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 60px;">
+      <a href="services.html" class="cta cta-outline">Explore all services</a>
+    </div>
+  </div>
+</section>
+
+<!-- JESSIE SECTION -->
+<section class="jessie-section">
+  <div class="jessie-grid">
+    <div class="jessie-img img-placeholder variant-5"></div>
+    <div class="jessie-text">
+      <div class="eyebrow">Meet your provider</div>
+      <h2>Ten years of <em>judgment</em> — brought home to Claremont.</h2>
+      <p>Jessie trained in Portland for a decade, honing her craft at some of the Pacific Northwest's most respected aesthetic practices before returning to her hometown to open Boon.</p>
+      <p>Her philosophy is simple: <strong>good work should look like nothing happened.</strong> No frozen foreheads. No overfilled cheeks. Just a quieter, better-rested version of the face you've always had.</p>
+      <div class="jessie-sig">— Jessie</div>
+      <div class="jessie-credentials">
+        <div class="jessie-cred">
+          <div class="num">10+</div>
+          <div class="label">Years injecting</div>
+        </div>
+        <div class="jessie-cred">
+          <div class="num">500+</div>
+          <div class="label">Injectors trained</div>
+        </div>
+        <div class="jessie-cred">
+          <div class="num">RN</div>
+          <div class="label">Registered Nurse</div>
+        </div>
+      </div>
+      <a href="about.html" class="cta-ghost" style="margin-top: 30px; display: inline-block;">Read Jessie's full story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="container-narrow">
+    <div class="eyebrow">Our approach</div>
+    <blockquote>We'd rather under-treat and have you come back, than chase a <em>trend</em> and have you regret it.</blockquote>
+    <div class="attribution">— The Boon Philosophy</div>
+  </div>
+</section>
+
+<!-- GALLERY PREVIEW -->
+<section class="gallery-preview">
+  <div class="container">
+    <div class="gallery-head">
+      <div>
+        <div class="eyebrow">Results</div>
+        <h2>Before & <em>after.</em></h2>
+      </div>
+      <a href="gallery.html" class="cta-ghost">View full gallery →</a>
+    </div>
+    <div class="gallery-grid">
+      <a href="gallery.html" class="gal-item">
+        <div class="img img-placeholder variant-4"></div>
+        <div class="label">Wrinkle Relaxers · 2 weeks</div>
+      </a>
+      <a href="gallery.html" class="gal-item">
+        <div class="img img-placeholder variant-2"></div>
+        <div class="label">Undereye Filler · 4 weeks</div>
+      </a>
+      <a href="gallery.html" class="gal-item">
+        <div class="img img-placeholder variant-5"></div>
+        <div class="label">Cheek Restoration · 6 weeks</div>
+      </a>
+      <a href="gallery.html" class="gal-item">
+        <div class="img img-placeholder variant-1"></div>
+        <div class="label">Lip Refinement · 3 weeks</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TRAININGS BLOCK -->
+<section class="trainings-block">
+  <div class="trainings-grid">
+    <div class="trainings-text">
+      <div class="eyebrow">For injectors</div>
+      <h2>Jessie also <em>trains</em> other injectors.</h2>
+      <p>Over the last decade, Jessie has mentored hundreds of aesthetic professionals — sharing the techniques, judgment, and philosophy that set a good injector apart from a great one.</p>
+      <p>If you're an RN, PA, or NP looking to develop your aesthetic practice, Jessie offers small-group trainings at the Claremont studio.</p>
+      <div class="trainings-stats">
+        <div class="trainings-stat">
+          <div class="num">500+</div>
+          <div class="label">Injectors trained</div>
+        </div>
+        <div class="trainings-stat">
+          <div class="num">10yr</div>
+          <div class="label">Teaching experience</div>
+        </div>
+        <div class="trainings-stat">
+          <div class="num">1:1</div>
+          <div class="label">Mentorship style</div>
+        </div>
+      </div>
+      <a href="trainings.html" class="cta cta-dark">Learn about trainings</a>
+    </div>
+    <div class="trainings-img img-placeholder variant-6"></div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit-block" id="book">
+  <div class="container-narrow">
+    <div class="eyebrow">Come see us</div>
+    <h2>Ready to <em>start</em>?</h2>
+    <p>Every Boon journey begins with a consultation. Thirty minutes, no pressure — just a conversation about what you'd like to feel different about, and what's realistic.</p>
+    <div class="visit-card">
+      <div class="visit-item">
+        <div class="label">Location</div>
+        <div class="val">Claremont Village</div>
+      </div>
+      <div class="visit-item">
+        <div class="label">Hours</div>
+        <div class="val">Tues–Fri, 10–6</div>
+      </div>
+      <div class="visit-item">
+        <div class="label">Text us</div>
+        <div class="val">(909) 675-1520</div>
+      </div>
+    </div>
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="#" class="cta cta-primary">Book Consultation</a>
+      <a href="contact.html" class="cta cta-outline">Contact us</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>
